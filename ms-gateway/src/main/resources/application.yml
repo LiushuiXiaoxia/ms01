@@ -17,9 +17,11 @@ spring:
 
         # 其他的
         - id: api1
-          uri: http://localhost:8810/
+          uri: http://localhost:8810
           predicates:
-            - Path=/
+            - Path=/api1/**
+          filters:
+            - StripPrefix=1
 
 management:
   endpoint:
@@ -33,4 +35,4 @@ management:
         include: gateway, prometheus
   metrics:
     tags:
-      application: hub-gateway
+      application: ms-gateway

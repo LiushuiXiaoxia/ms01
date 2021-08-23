@@ -7,14 +7,21 @@ plugins {
     kotlin("plugin.spring") version "1.3.72"
 }
 
+buildscript {
+    repositories {
+        maven(url = "https://maven.aliyun.com/nexus/content/groups/public/")
+        mavenCentral()
+    }
+}
+
 group = "com.example"
 version = "0.0.1-SNAPSHOT"
 java.sourceCompatibility = JavaVersion.VERSION_1_8
 
 repositories {
+    maven(url = "https://maven.aliyun.com/nexus/content/groups/public/")
     mavenCentral()
 }
-
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")

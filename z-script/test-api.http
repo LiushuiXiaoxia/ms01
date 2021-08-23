@@ -1,3 +1,7 @@
 
 
-GET {{gateway_host}}/api1/test
+GET {{gateway_host}}/api1/customer/test
+
+###
+
+GET {{gateway_host}}/api1/customer/test2
