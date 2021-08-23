@@ -7,8 +7,11 @@ import org.springframework.web.bind.annotation.RestController
 @RequestMapping("/customer")
 class CustomerController {
 
-    @Requestm
-    fun test(): Object {
-
+    @RequestMapping("/test")
+    fun test(): Any {
+        return mapOf<String, Any>(
+            "hello" to "world",
+            "msg" to "msg from customer"
+        )
     }
 }
