@@ -1,10 +1,10 @@
-package com.example.msdateway
+package com.example.msgateway
 
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest
 
 @SpringBootTest
-class MsDatewayApplicationTests {
+class MsGatewayApplicationTests {
 
     @Test
     fun contextLoads() {

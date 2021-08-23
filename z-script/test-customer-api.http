@@ -1,0 +1,8 @@
+
+
+GET {{customer_host}}/customer/test
+
+
+###
+
+GET {{customer_host}}/customer/test2

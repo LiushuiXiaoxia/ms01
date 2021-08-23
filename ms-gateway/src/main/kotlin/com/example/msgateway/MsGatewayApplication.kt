@@ -1,11 +1,11 @@
-package com.example.msdateway
+package com.example.msgateway
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class MsDatewayApplication
+class MsGatewayApplication
 
 fun main(args: Array<String>) {
-    runApplication<MsDatewayApplication>(*args)
+    runApplication<MsGatewayApplication>(*args)
 }
