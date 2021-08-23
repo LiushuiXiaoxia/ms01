@@ -8,7 +8,7 @@ plugins {
 }
 buildscript {
     repositories {
-        maven(url = "https://maven.aliyun.com/nexus/content/groups/public/")
+        maven(url = "https://maven.aliyun.com/repository/public/")
         mavenCentral()
     }
 }
@@ -18,7 +18,7 @@ version = "0.0.1-SNAPSHOT"
 java.sourceCompatibility = JavaVersion.VERSION_1_8
 
 repositories {
-    maven(url = "https://maven.aliyun.com/nexus/content/groups/public/")
+    maven(url = "https://maven.aliyun.com/repository/public/")
     mavenCentral()
 }
 

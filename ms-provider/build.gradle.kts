@@ -9,7 +9,7 @@ plugins {
 
 buildscript {
     repositories {
-        maven(url = "https://maven.aliyun.com/nexus/content/groups/public/")
+        maven(url = "https://maven.aliyun.com/repository/public/")
         mavenCentral()
     }
 }
@@ -19,7 +19,7 @@ version = "0.0.1-SNAPSHOT"
 java.sourceCompatibility = JavaVersion.VERSION_1_8
 
 repositories {
-    maven(url = "https://maven.aliyun.com/nexus/content/groups/public/")
+    maven(url = "https://maven.aliyun.com/repository/public/")
     mavenCentral()
 }
 dependencies {
@@ -31,7 +31,7 @@ dependencies {
 
     // nacos
     implementation("com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-discovery:2.2.1.RELEASE")
-    // implementation("org.springframework.cloud:spring-cloud-starter-alibaba-nacos-config:2.2.1.RELEASE")
+    implementation("com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-config:2.2.1.RELEASE")
 
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
