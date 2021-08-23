@@ -7,7 +7,8 @@ import org.springframework.web.bind.annotation.RequestMethod
 @FeignClient(
     name = "providerFeignApi",
     serviceId = "ms-provider",
-    configuration = [FeignConfig::class]
+    configuration = [FeignConfig::class],
+    fallback = IProviderFeignApiFallback::class
 )
 interface IProviderFeignApi {
 

@@ -27,6 +27,6 @@ class CustomerController {
 
     @RequestMapping("/test3")
     fun test3(): Any? {
-        return service.testUseRestTemp()
+        return service.testUseFeign()
     }
 }

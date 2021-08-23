@@ -21,10 +21,8 @@ GET {{gateway_host}}/api1/customer/test2
 
 GET {{gateway_host}}/lbapi/customer/test
 
-###
-
+### RestTemplate
 GET {{gateway_host}}/lbapi/customer/test2
 
-###
-
+### feign
 GET {{gateway_host}}/lbapi/customer/test3
