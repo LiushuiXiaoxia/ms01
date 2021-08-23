@@ -2,5 +2,7 @@ package com.example.mscustomer.service
 
 interface IProviderService {
 
-    fun testUserRestTemp(): Any?
+    fun testUseRestTemp(): Any?
+
+    fun testUseFeign(): Any?
 }

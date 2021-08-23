@@ -27,15 +27,18 @@ extra["springCloudVersion"] = "Hoxton.SR9"
 dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+
     implementation("org.springframework.cloud:spring-cloud-starter-gateway")
+    // implementation("org.springframework.cloud:spring-cloud-starter-openfeign")
 
     // actuator & prometheus
     implementation("org.springframework.boot:spring-boot-starter-actuator")
-    // implementation("io.micrometer:micrometer-registry-prometheus:1.1.3")
+    implementation("io.micrometer:micrometer-registry-prometheus")
 
     // nacos
     implementation("com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-discovery:2.2.1.RELEASE")
-    // implementation("org.springframework.cloud:spring-cloud-starter-alibaba-nacos-config:2.2.1.RELEASE")
+    implementation("com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-config:2.2.1.RELEASE")
 
     testImplementation("org.springframework.boot:spring-boot-starter-test") {
         exclude(group = "org.junit.vintage", module = "junit-vintage-engine")

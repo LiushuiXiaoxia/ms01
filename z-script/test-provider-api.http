@@ -1,3 +1,7 @@
 
 
 GET {{provider_host}}/provider/test
+
+###
+
+GET {{provider_host}}/actuator/prometheus

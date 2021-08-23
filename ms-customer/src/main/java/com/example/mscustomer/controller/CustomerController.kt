@@ -22,6 +22,11 @@ class CustomerController {
 
     @RequestMapping("/test2")
     fun test2(): Any? {
-        return service.testUserRestTemp()
+        return service.testUseRestTemp()
+    }
+
+    @RequestMapping("/test3")
+    fun test3(): Any? {
+        return service.testUseRestTemp()
     }
 }

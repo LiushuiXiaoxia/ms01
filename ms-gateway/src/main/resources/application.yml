@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: ms-dateway
+    name: ms-gateway
   cloud:
     gateway:
       metrics:
@@ -35,12 +35,17 @@ management:
   endpoint:
     health:
       show-details: always
-    gateway:
+    metrics:
+      enabled: true
+    prometheus:
       enabled: true
   endpoints:
     web:
       exposure:
-        include: gateway, prometheus
+        include: "*"
   metrics:
     tags:
       application: ms-gateway
+    export:
+      prometheus:
+        enabled: true

@@ -1,3 +1,10 @@
+
+
+### customer_host
+
+GET {{gateway_host}}/actuator/prometheus
+
+
 ####
 # api
 ####
@@ -17,3 +24,7 @@ GET {{gateway_host}}/lbapi/customer/test
 ###
 
 GET {{gateway_host}}/lbapi/customer/test2
+
+###
+
+GET {{gateway_host}}/lbapi/customer/test3

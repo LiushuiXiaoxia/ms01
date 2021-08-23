@@ -1,0 +1,25 @@
+server:
+  port: 8810
+
+spring:
+  application:
+    name: ms-customer
+
+management:
+  endpoint:
+    health:
+      show-details: always
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  metrics:
+    tags:
+      application: ms-provider
+    export:
+      prometheus:
+        enabled: true

@@ -6,3 +6,8 @@ GET {{customer_host}}/customer/test
 ###
 
 GET {{customer_host}}/customer/test2
+
+
+###
+
+GET {{customer_host}}/actuator/prometheus
