@@ -1,7 +1,19 @@
-
+####
+# api
+####
 
 GET {{gateway_host}}/api1/customer/test
 
 ###
 
 GET {{gateway_host}}/api1/customer/test2
+
+####
+# lb api
+####
+
+GET {{gateway_host}}/lbapi/customer/test
+
+###
+
+GET {{gateway_host}}/lbapi/customer/test2
