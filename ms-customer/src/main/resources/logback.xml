@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-    <property name="log.path" value="${HOME}/log/ms-gateway"/>
+    <property name="log.path" value="${HOME}/log/ms-customer"/>
     <property name="log.pattern" value="%d{HH:mm:ss.SSS} [%thread] %-1level %logger{20} - %msg%n"/>
     <property name="log.maxHistory" value="10"/>
     <property name="log.maxFileSize" value="1GB"/>

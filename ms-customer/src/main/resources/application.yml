@@ -23,7 +23,7 @@ management:
         include: "*"
   metrics:
     tags:
-      application: ms-provider
+      application: ms-customer
     export:
       prometheus:
         enabled: true
