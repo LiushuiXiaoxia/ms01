@@ -1,0 +1,26 @@
+buildscript {
+    ext.kotlin_version = '1.4.32'
+
+    repositories {
+        maven { url "https://maven.aliyun.com/repository/public/" }
+        mavenCentral()
+    }
+
+    dependencies {
+        // classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        // classpath "org.springframework.boot:spring-boot-gradle-plugin:2.3.7.RELEASE"
+        // classpath "org.jetbrains.kotlin:kotlin-allopen:$kotlin_version"
+    }
+}
+
+allprojects {
+    repositories {
+        maven { url "https://maven.aliyun.com/repository/public/" }
+        mavenCentral()
+    }
+}
+
+// apply plugin: 'fawkes.publish'
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

@@ -16,7 +16,9 @@ class BeforeFilter : AbsFilter() {
         val gatewayUri = exchange.attributes[GATEWAY_REQUEST_URL_ATTR]
         log.info("> BeforeFilter.uri = {}, gatewayUri = {}", uri, gatewayUri)
 
-        return chain.filter(exchange)
+        return chain.filter(exchange).then(Mono.fromRunnable {
+            log.info("<<< After BeforeFilter.uri = {}", uri)
+        })
     }
 
     override fun getOrder(): Int = -1
