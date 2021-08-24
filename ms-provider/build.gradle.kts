@@ -28,6 +28,8 @@ repositories {
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.cloud:spring-cloud-starter-openfeign")
+    implementation("org.springframework.cloud:spring-cloud-starter-sleuth")
+    implementation("org.springframework.cloud:spring-cloud-starter-zipkin")
 
     // actuator & prometheus
     implementation("org.springframework.boot:spring-boot-starter-actuator")
