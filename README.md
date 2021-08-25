@@ -27,7 +27,7 @@ https://prometheus.io/download/
 
 docker run \
     -p 9090:9090 \
-    -v /path/to/prometheus.yml:/etc/prometheus/prometheus.yml \
+    -v "$PWD"/prometheus.yml:/etc/prometheus/prometheus.yml \
     prom/prometheus
 ```
 
@@ -50,6 +50,10 @@ cfg:default.paths.plugins=/usr/local/var/lib/grafana/plugins
 http://localhost:3000/
 
 # 4701
+```
+
+```shell
+docker run -d -p 3000:3000 --name grafana grafana/grafana:6.5.0
 ```
 
 ## Zipkin
