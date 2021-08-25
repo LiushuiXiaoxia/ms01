@@ -60,9 +60,6 @@ https://zipkin.io/pages/quickstart.html
 docker run -d -p 9411:9411 openzipkin/zipkin
 ```
 
-## ELK
-
-
 ## Skywalking
 
 https://skywalking.apache.org/downloads/
