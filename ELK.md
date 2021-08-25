@@ -48,4 +48,5 @@ docker run --name kib01-test --net elastic -p 5601:5601 -e "ELASTICSEARCH_HOSTS=
 ```
 
 http://localhost:9200/
+
 http://localhost:5601/app/home

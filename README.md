@@ -25,7 +25,8 @@ https://prometheus.io/download/
 
 # or
 
-docker run \
+
+er run \
     -p 9090:9090 \
     -v "$PWD"/prometheus.yml:/etc/prometheus/prometheus.yml \
     prom/prometheus
@@ -53,6 +54,7 @@ http://localhost:3000/
 ```
 
 ```shell
+docker pull grafana/grafana:6.5.0
 docker run -d -p 3000:3000 --name grafana grafana/grafana:6.5.0
 ```
 
