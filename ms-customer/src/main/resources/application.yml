@@ -1,6 +1,10 @@
 server:
   port: 8810
 
+logging:
+  level:
+    "com.example.mscustomer.feign": debug
+
 spring:
   application:
     name: ms-customer

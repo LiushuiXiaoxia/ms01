@@ -32,6 +32,10 @@ dependencies {
     implementation("org.springframework.cloud:spring-cloud-starter-sleuth")
     implementation("org.springframework.cloud:spring-cloud-starter-zipkin")
 
+    // elk
+    implementation("com.internetitem:logback-elasticsearch-appender:1.6")
+    implementation("net.logstash.logback:logstash-logback-encoder:4.11")
+
     // actuator & prometheus
     implementation("org.springframework.boot:spring-boot-starter-actuator")
     implementation("io.micrometer:micrometer-registry-prometheus")
