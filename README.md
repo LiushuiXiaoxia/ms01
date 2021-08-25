@@ -105,3 +105,10 @@ collector.backend_service=${SW_AGENT_COLLECTOR_BACKEND_SERVICES:192.168.100.17:1
 ```shell
 curl http://localhost:8800/lbapi/customer/test3
 ```
+
+
+## ab
+
+```shell
+ab -n 1000 -c 10 http://localhost:8800/lbapi/customer/test3
+```
