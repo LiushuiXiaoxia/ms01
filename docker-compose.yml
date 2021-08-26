@@ -1,0 +1,38 @@
+version: '3'
+services:
+  ms-gateway:
+    build:
+      context: ms-gateway
+    expose:
+      - "8800"
+    ports:
+      - "8800:8800"
+    networks:
+      - default
+      - outside
+
+  ms-customer:
+    build:
+      context: ms-customer
+    expose:
+      - "8810"
+    ports:
+      - "8810:8810"
+    networks:
+      - default
+      - outside
+
+  ms-provider:
+    build:
+      context: ms-provider
+    expose:
+      - "8820"
+    ports:
+      - "8820:8820"
+    networks:
+      - default
+      - outside
+
+networks:
+  outside:
+    external: true
