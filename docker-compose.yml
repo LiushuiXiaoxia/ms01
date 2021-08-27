@@ -12,21 +12,23 @@ services:
     ports:
       - "8848:8848"
       - "9848:9848"
+    restart: always
     networks:
-      - default
       - outside
 
   ms-gateway:
     build:
       context: ms-gateway
     container_name: ms-gateway
-    expose:
-      - "8800"
+#    expose:
+#      - "8800"
     ports:
       - "8800:8800"
     networks:
-      - default
       - outside
+    restart: always
+    depends_on:
+      - ms-nacos
 
   ms-customer:
     build:
@@ -37,8 +39,10 @@ services:
     ports:
       - "8810:8810"
     networks:
-      - default
       - outside
+    restart: always
+    depends_on:
+      - ms-nacos
 
   ms-provider:
     build:
@@ -49,14 +53,15 @@ services:
     ports:
       - "8820:8820"
     networks:
-      - default
       - outside
-
+    restart: always
+    depends_on:
+      - ms-nacos
 #networks:
 #  default:
 #    external:
 #      name: outside
-
+#
 networks:
   outside:
     external: true
