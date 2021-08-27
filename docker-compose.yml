@@ -1,5 +1,14 @@
 version: '3'
 services:
+  ms-zipkin:
+    image: openzipkin/zipkin
+    container_name: ms-zipkin
+    ports:
+      - "9411:9411"
+    restart: always
+    networks:
+      - outside
+
   ms-nacos:
     image: nacos/nacos-server:2.0.3
     container_name: ms-nacos

@@ -1,0 +1,35 @@
+server:
+  port: 8810
+
+logging:
+  level:
+    "com.example.mscustomer.feign": debug
+
+spring:
+  application:
+    name: ms-customer
+  zipkin:
+    base-url: http://ms-zipkin:9411/
+
+feign:
+  hystrix:
+    enabled: true
+
+management:
+  endpoint:
+    health:
+      show-details: always
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  metrics:
+    tags:
+      application: ms-customer
+    export:
+      prometheus:
+        enabled: true

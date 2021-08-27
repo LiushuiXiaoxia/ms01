@@ -1,0 +1,30 @@
+server:
+  port: 8820
+
+config:
+  hello: hello world local
+
+spring:
+  application:
+    name: ms-provider
+  zipkin:
+    base-url: http://ms-zipkin:9411/
+
+management:
+  endpoint:
+    health:
+      show-details: always
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  metrics:
+    tags:
+      application: ms-provider
+    export:
+      prometheus:
+        enabled: true

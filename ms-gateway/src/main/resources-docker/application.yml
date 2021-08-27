@@ -1,0 +1,53 @@
+server:
+  port: 8800
+
+spring:
+  application:
+    name: ms-gateway
+  zipkin:
+    base-url: http://ms-zipkin:9411/
+  cloud:
+    gateway:
+      metrics:
+        enabled: true
+      routes:
+        # 监控转发到actuator中
+        - id: metrics
+          uri: forward:/actuator/prometheus
+          predicates:
+            - Path=/metrics
+
+        # 其他的
+        - id: api1
+          uri: http://localhost:8810
+          predicates:
+            - Path=/api1/**
+          filters:
+            - StripPrefix=1
+        - id: lbapi
+          uri: lb://ms-customer
+          predicates:
+            - Path=/lbapi/**
+          filters:
+            - StripPrefix=1
+
+
+
+management:
+  endpoint:
+    health:
+      show-details: always
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  metrics:
+    tags:
+      application: ms-gateway
+    export:
+      prometheus:
+        enabled: true
