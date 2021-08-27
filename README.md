@@ -10,7 +10,7 @@ https://nacos.io/zh-cn/docs/quick-start.html
 
 
 ```shell
-./bin/startup.sh
+./bin/startup.sh -m standalone
 ```
 
 http://localhost:8848/nacos

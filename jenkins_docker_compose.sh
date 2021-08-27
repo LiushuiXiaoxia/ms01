@@ -23,7 +23,7 @@ build_module() {
 }
 
 echo "build and start success..."
-docker-compose up -d
+docker-compose up --build
 
 sleep 10
 docker ps | grep "ms"
