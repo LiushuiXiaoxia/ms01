@@ -1,8 +1,25 @@
 version: '3'
 services:
+  ms-nacos:
+    image: nacos/nacos-server:2.0.3
+    container_name: ms-nacos
+    environment:
+      - PREFER_HOST_MODE=hostname
+      - MODE=standalone
+#    volumes:
+#      - ./ms-nacos/standalone-logs/:/home/nacos/logs
+#      - ./ms-nacos/init.d/custom.properties:/home/nacos/init.d/custom.properties
+    ports:
+      - "8848:8848"
+      - "9848:9848"
+    networks:
+      - default
+      - outside
+
   ms-gateway:
     build:
       context: ms-gateway
+    container_name: ms-gateway
     expose:
       - "8800"
     ports:
@@ -14,6 +31,7 @@ services:
   ms-customer:
     build:
       context: ms-customer
+    container_name: ms-customer
     expose:
       - "8810"
     ports:
@@ -25,6 +43,7 @@ services:
   ms-provider:
     build:
       context: ms-provider
+    container_name: ms-provider
     expose:
       - "8820"
     ports:
@@ -32,6 +51,11 @@ services:
     networks:
       - default
       - outside
+
+#networks:
+#  default:
+#    external:
+#      name: outside
 
 networks:
   outside:

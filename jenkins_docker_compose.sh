@@ -4,7 +4,7 @@ set -e
 
 echo "Build with Gradle"
 chmod u+x gradlew
-./gradlew clean assemble
+./gradlew clean assemble -PBUILD_ENV=docker
 echo "Build complete"
 
 build_module() {

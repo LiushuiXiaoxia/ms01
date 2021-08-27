@@ -20,6 +20,31 @@ allprojects {
     }
 }
 
+ext {
+    gBuildEnv = BUILD_ENV
+}
+
+println """
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+    buildEnv = ${ext.gBuildEnv}
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+"""
+
+subprojects {
+    apply plugin: 'java'
+
+    // 试用不同的资源
+    sourceSets {
+        main {
+            resources {
+                srcDirs = ['src/main/resources', "src/main/resources-$BUILD_ENV"]
+            }
+        }
+    }
+}
+
 // apply plugin: 'fawkes.publish'
 task clean(type: Delete) {
     delete rootProject.buildDir
