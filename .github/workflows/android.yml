@@ -1,4 +1,4 @@
-name: Android CI
+name: Spring Boot CI
 
 on:
   push:
