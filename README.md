@@ -56,6 +56,8 @@ http://localhost:3000/
 ```shell
 docker pull grafana/grafana:6.5.0
 docker run -d -p 3000:3000 --name grafana grafana/grafana:6.5.0
+
+docker run -it -p 3000:3000 --name grafana grafana/grafana:6.5.0
 ```
 
 ## Zipkin
