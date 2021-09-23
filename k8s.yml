@@ -1,0 +1,76 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ms-gateway
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: ms-gateway
+  template:
+    metadata:
+      name: ms-gateway
+      labels:
+        app: ms-gateway
+    spec:
+      containers:
+        - image: xx.oo/xia/ms-gateway:v0.1
+          name: ms-gateway
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ms-customer
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: ms-customer
+  template:
+    metadata:
+      name: ms-customer
+      labels:
+        app: ms-customer
+    spec:
+      containers:
+        - image: xx.oo/xia/ms-customer:v0.1
+          name: ms-customer
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ms-provider
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: ms-provider
+  template:
+    metadata:
+      name: ms-provider
+      labels:
+        app: ms-provider
+    spec:
+      containers:
+        - image: xx.oo/xia/ms-provider:v0.1
+          name: ms-provider
+          imagePullPolicy: IfNotPresent
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: ms-gateway-svc
+spec:
+  type: NodePort
+  ports:
+    - port: 38800
+      targetPort: 8800
+      nodePort: 30000
+  selector:
+    app: ms-gateway

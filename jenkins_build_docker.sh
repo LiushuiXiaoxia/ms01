@@ -19,7 +19,8 @@ build_module() {
   docker build -t "$module":v0.1 .
 
   echo "docker start $module"
-  docker run -d --network host -p "$port":"$port" --name "$module"-docker "$module":v0.1
+  # docker run -d --network host -p "$port":"$port" --name "$module"-docker "$module":v0.1
+  docker run -d -p "$port":"$port" --name "$module"-docker "$module":v0.1
   popd
   echo "<<< docker build $module"
 }
