@@ -1,6 +1,6 @@
 #!/bin/sh
 
-set -e
+#set -e
 
 echo "Build with Gradle"
 chmod u+x gradlew
@@ -8,6 +8,7 @@ chmod u+x gradlew
 echo "Build complete"
 
 VERSION_NAME=v0.1
+REPO_URL=xx.oo/xia
 
 build_module() {
   module=$1
@@ -17,6 +18,7 @@ build_module() {
   docker images | grep "$module:$VERSION_NAME" | awk '{print $3}' | xargs docker rmi
 
   docker build -t "$module:$VERSION_NAME" .
+  docker tag "$module:$VERSION_NAME" "$REPO_URL/$module:$VERSION_NAME"
   popd
   echo "<<< docker build $module"
 }
@@ -29,12 +31,12 @@ build_module "ms-provider" 8820
 kubectl delete -f ms-k8s.yml
 
 echo ">>> minikube load image"
-minikube image load "ms-gateway:$VERSION_NAME"
-minikube image load "ms-customer:$VERSION_NAME"
-minikube image load "ms-provider:$VERSION_NAME"
+minikube image load "$REPO_URL/ms-gateway:$VERSION_NAME"
+minikube image load "$REPO_URL/ms-customer:$VERSION_NAME"
+minikube image load "$REPO_URL/ms-provider:$VERSION_NAME"
 echo "<<< minikube load image"
 
-kubectl apply -f ms-k8s.yml
+kubectl apply -f k8s.yml
 
 sleep 10
 minikube service ms-gateway-svc
