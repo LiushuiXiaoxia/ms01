@@ -2,6 +2,8 @@
 
 ---
 
+[![Spring Boot CI](https://github.com/LiushuiXiaoxia/ms01/actions/workflows/android.yml/badge.svg)](https://github.com/LiushuiXiaoxia/ms01/actions/workflows/android.yml)
+
 [Spring Cloud](SpringCloud.md)
 
 [CI](CI.md)
